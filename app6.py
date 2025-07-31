@@ -31,11 +31,14 @@ if page == "Crack Detection & Repair Tips":
     GEMINI_API_KEY = st.secrets.get("gemini_api_key") 
 
     # Check if the API key is available
-    if not GEMINI_API_KEY:
-        st.warning("Gemini API Key not found in Streamlit secrets. Please add it to your .streamlit/secrets.toml file or configure it in your deployment environment.")
-        st.stop() # Stop the app execution if the key is missing
+    GEMINI_API_KEY = st.secrets.get("gemini_api_key") 
 
-    GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent"
+# Check if the API key is available
+    if not GEMINI_API_KEY:
+            st.warning("Gemini API Key not found in Streamlit secrets. Please add it to your .streamlit/secrets.toml file or configure it in your deployment environment.")
+            st.stop() # Stop the app execution if the key is missing
+
+GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent"
 
     # --- Load YOLOv8 model ---
     @st.cache_resource
