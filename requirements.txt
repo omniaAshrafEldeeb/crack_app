@@ -3,3 +3,5 @@ ultralytics
 Pillow
 requests
 google-generativeai
+opencv-python
+ultralytics
