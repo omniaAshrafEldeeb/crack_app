@@ -10,7 +10,7 @@ import json
 import time
 import shutil
 
-image = "Gemini_Generated_Image_c1cex1c1cex1c1ce.png"
+image = Image.open("images/Gemini_Generated_Image_c1cex1c1cex1c1ce.png")
 # Set Streamlit page configuration
 st.set_page_config(
     page_title="Crack Detector AI",
