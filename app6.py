@@ -10,6 +10,7 @@ import json
 import time
 import shutil
 
+image = "Gemini_Generated_Image_c1cex1c1cex1c1ce.png"
 # Set Streamlit page configuration
 st.set_page_config(
     page_title="Crack Detector AI",
@@ -20,6 +21,7 @@ st.set_page_config(
 
 # Sidebar navigation
 page = st.sidebar.selectbox("Choose Page", ["Crack Detection & Repair Tips", "About"])
+st.sidebar.image(image, caption="My Image", use_column_width=True)
 
 if page == "Crack Detection & Repair Tips":
 
