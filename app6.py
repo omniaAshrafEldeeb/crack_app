@@ -10,11 +10,11 @@ import torch
 import json
 import time
 import shutil
-url = "https://drive.google.com/file/d/135InVrHL21pLTU9vbLIt9RgIN8cRpZco/view?usp=sharing"
+# Direct download link
+url = "https://drive.google.com/uc?export=download&id=135InVrHL21pLTU9vbLIt9RgIN8cRpZco"
 response = requests.get(url)
 image = Image.open(BytesIO(response.content))
 
-#image = Image.open("https://drive.google.com/file/d/135InVrHL21pLTU9vbLIt9RgIN8cRpZco/view?usp=sharing")
 # Set Streamlit page configuration
 st.set_page_config(
     page_title="Crack Detector AI",
