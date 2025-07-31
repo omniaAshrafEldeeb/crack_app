@@ -21,7 +21,7 @@ st.set_page_config(
 
 # Sidebar navigation
 page = st.sidebar.selectbox("Choose Page", ["Crack Detection & Repair Tips", "About"])
-st.sidebar.image(image, caption="My Image", use_column_width=True)
+st.sidebar.image(image, caption="My Image", width=100)
 
 if page == "Crack Detection & Repair Tips":
 
