@@ -1,7 +1,7 @@
 streamlit
 ultralytics
+opencv-python
 Pillow
 requests
 google-generativeai
-opencv-python
-ultralytics
+torch
