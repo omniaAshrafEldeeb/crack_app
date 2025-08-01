@@ -33,6 +33,9 @@ if page == "Crack Detection & Repair Tips":
     # Get Gemini API key and URL from secrets
     GEMINI_API_KEY = st.secrets.get("GEMINI_API_KEY")
     GEMINI_API_URL = st.secrets.get("GEMINI_API_URL")
+    st.write("GEMINI_API_KEY found:", "GEMINI_API_KEY" in st.secrets)
+    st.write("GEMINI_API_URL found:", "GEMINI_API_URL" in st.secrets)
+
 
     if not GEMINI_API_KEY or not GEMINI_API_URL:
         st.warning("Gemini API Key or URL not found in Streamlit secrets. Please add them to your .streamlit/secrets.toml file.")
