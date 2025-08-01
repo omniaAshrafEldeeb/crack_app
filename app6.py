@@ -10,6 +10,7 @@ import torch
 import json
 import time
 import shutil
+
 # Direct download link
 url = "https://drive.google.com/uc?export=download&id=135InVrHL21pLTU9vbLIt9RgIN8cRpZco"
 response = requests.get(url)
@@ -25,7 +26,7 @@ st.set_page_config(
 
 # Sidebar navigation
 page = st.sidebar.selectbox("Choose Page", ["Crack Detection & Repair Tips", "About"])
-st.sidebar.image(image, caption="Built with ❤️ by Our Team",use_container_width=True)
+st.sidebar.image(image, caption="Built with ❤️ by Our Team", use_container_width=True)
 
 if page == "Crack Detection & Repair Tips":
 
@@ -67,7 +68,8 @@ if page == "Crack Detection & Repair Tips":
         }
 
         headers = {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': f"Bearer {GEMINI_API_KEY}"
         }
 
         retries = 0
@@ -77,9 +79,9 @@ if page == "Crack Detection & Repair Tips":
         while retries < max_retries:
             try:
                 response = requests.post(
-                    f"{GEMINI_API_URL}?key={GEMINI_API_KEY}",
+                    GEMINI_API_URL,
                     headers=headers,
-                    data=json.dumps(payload)
+                    json=payload
                 )
                 response.raise_for_status()
                 result = response.json()
